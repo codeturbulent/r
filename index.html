@@ -1,0 +1,461 @@
+<title>Representation Against Mess Caution Money — Hostel Students</title>
+
+<style>
+  :root {
+    --bg: #EEF0E9;
+    --surface: #FFFFFF;
+    --surface-sunken: #F6F5EF;
+    --ink: #1C2430;
+    --ink-soft: #545B63;
+    --ink-faint: #8A8F94;
+    --accent: #96702A;
+    --accent-ink: #6E5220;
+    --line: #DAD7C9;
+    --line-strong: #C7C3B1;
+    --quote-bg: #F8F2E3;
+    --focus: #2F5D8A;
+
+    --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'URW Palladio L', Georgia, serif;
+    --font-body: Charter, 'Bitstream Charter', 'Sitka Text', Georgia, 'Palatino Linotype', serif;
+    --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'JetBrains Mono', Menlo, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14171C;
+      --surface: #1B1F26;
+      --surface-sunken: #20242C;
+      --ink: #E7E5DC;
+      --ink-soft: #ADB2B9;
+      --ink-faint: #767C84;
+      --accent: #D3A24B;
+      --accent-ink: #E4BB70;
+      --line: #303640;
+      --line-strong: #3C434F;
+      --quote-bg: #262319;
+      --focus: #6FA0D6;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #14171C;
+    --surface: #1B1F26;
+    --surface-sunken: #20242C;
+    --ink: #E7E5DC;
+    --ink-soft: #ADB2B9;
+    --ink-faint: #767C84;
+    --accent: #D3A24B;
+    --accent-ink: #E4BB70;
+    --line: #303640;
+    --line-strong: #3C434F;
+    --quote-bg: #262319;
+    --focus: #6FA0D6;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    padding: 3.5rem 1.25rem 5rem;
+  }
+
+  .page {
+    max-width: 46rem;
+    margin: 0 auto;
+  }
+
+  .letterhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid var(--line-strong);
+    margin-bottom: 2.25rem;
+    flex-wrap: wrap;
+  }
+
+  .letterhead .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    font-weight: 600;
+  }
+
+  .letterhead .meta {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .meta .ref {
+    color: var(--ink-soft);
+  }
+
+  .addressees {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 1.9rem;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px dashed var(--line);
+  }
+
+  .addr-row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+  }
+
+  .addr-label {
+    flex: 0 0 1.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    font-weight: 600;
+  }
+
+  .addr-value {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.55rem, 1.2rem + 1.4vw, 2.1rem);
+    line-height: 1.25;
+    letter-spacing: 0.002em;
+    text-wrap: balance;
+    margin: 0 0 2rem;
+    color: var(--ink);
+  }
+
+  .letter-body p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--ink);
+    margin: 0 0 1.3rem;
+    max-width: 62ch;
+  }
+
+  .salutation {
+    margin-bottom: 1.5rem !important;
+  }
+
+  blockquote {
+    margin: 1.8rem 0 1.9rem;
+    padding: 1.1rem 1.4rem 1.1rem 1.5rem;
+    background: var(--quote-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 3px 3px 0;
+  }
+
+  blockquote .point-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 0.55rem;
+    font-weight: 600;
+  }
+
+  blockquote p {
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .closing {
+    margin-top: 2.25rem;
+  }
+
+  .closing .thanks {
+    margin-bottom: 1.9rem !important;
+  }
+
+  .sign-block {
+    margin-top: 0.3rem;
+  }
+
+  .sign-block .valediction {
+    display: block;
+    font-family: var(--font-body);
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-bottom: 1.1rem;
+  }
+
+  .sign-fields {
+    display: grid;
+    gap: 0.65rem;
+    max-width: 26rem;
+  }
+
+  .sign-fields .field {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+
+  .sign-fields .field .label {
+    flex: 0 0 auto;
+    color: var(--ink-soft);
+  }
+
+  .sign-fields .field .rule {
+    flex: 1 1 auto;
+    border-bottom: 1px dotted var(--line-strong);
+    height: 1.1em;
+  }
+
+  .send-panel {
+    margin-top: 2.75rem;
+    padding: 1.4rem 1.5rem;
+    background: var(--surface-sunken);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .send-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    max-width: 30rem;
+  }
+
+  .send-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    font-weight: 600;
+  }
+
+  .send-desc {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--ink-faint);
+  }
+
+  .send-button {
+    flex: 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    color: var(--surface);
+    background: var(--accent-ink);
+    padding: 0.7rem 1.15rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    border: 1px solid var(--accent-ink);
+  }
+
+  .send-button:hover {
+    filter: brightness(1.06);
+  }
+
+  .send-button:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  footer .note {
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    line-height: 1.6;
+    max-width: 34ch;
+  }
+
+  footer a {
+    color: var(--focus);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+
+  footer a:hover,
+  footer a:focus-visible {
+    border-bottom-color: currentColor;
+  }
+
+  a:focus-visible,
+  footer a:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  footer .stamp {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    border: 1px solid var(--line-strong);
+    border-radius: 3px;
+    padding: 0.35rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 30rem) {
+    .letterhead {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .letterhead .meta {
+      text-align: left;
+    }
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      color: #000;
+    }
+
+    footer .stamp {
+      display: none;
+    }
+
+    .send-panel {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+</style>
+
+<div class="page">
+
+  <div class="letterhead">
+    <span class="eyebrow">Representation &middot; Hostel Students</span>
+    <span class="meta">
+      <span class="ref">Ref: ACD45996/BBAU/26</span><br>
+      In response to letter dated 03/08/2026
+    </span>
+  </div>
+
+  <div class="addressees">
+    <div class="addr-row">
+      <span class="addr-label">To</span>
+      <span class="addr-value">Nodal Officer, General Grievance Cell &mdash; Dr. Raj Shree</span>
+    </div>
+    <div class="addr-row">
+      <span class="addr-label">Cc</span>
+      <span class="addr-value">Vice Chancellor &middot; Proctor &middot; Assistant Proctors (Prof. Ram Chandra, Dr.
+        Sufiya Ahmad, Dr. Pradeep Kumar) &middot; Dean, Students&rsquo; Welfare &middot; Chief Warden</span>
+    </div>
+  </div>
+
+  <h1>Withdrawal of the Rs. 5,000 Mess Caution Money Requirement</h1>
+
+  <div class="letter-body">
+    <p class="salutation">Respected Sir/Madam,</p>
+
+    <p>We, the students residing in the University Hostels, respectfully wish to draw your kind attention to Letter No.
+      ACD45996/BBAU/26 dated 03/08/2026, particularly Point No. 5, which states:</p>
+
+    <blockquote>
+      <span class="point-label">Point No. 5</span>
+      <p>&ldquo;Mess caution money of Rs. 5,000 shall be deposited by the hostel inmates at the time of allotment of
+        hostel along with the hostel fee. Further, in case of recovery from caution money, the same has to be recouped
+        immediately by the hostel inmates, to continue to avail the mess services.&rdquo;</p>
+    </blockquote>
+
+    <p>We would like to submit that many of us come from middle-class and financially modest backgrounds, and the
+      additional payment of &#8377;5,000 places a considerable financial burden on us. As students of a public-funded
+      university, we depend on affordable hostel and mess facilities to continue our education without undue financial
+      hardship.</p>
+
+    <p>We, therefore, sincerely request the concerned authorities to kindly consider our concerns and withdraw the newly
+      introduced requirement of &#8377;5,000 as mess caution money.</p>
+
+    <p>Furthermore, students who have already deposited the newly proposed amount under any circumstances, including
+      admission cancellation, evacuation/vacation of hostels, or late submission of fees, should be immediately refunded
+      the amount, irrespective of whether they are newly admitted students or already enrolled students.</p>
+
+    <p>We hope that our genuine concerns will be considered sympathetically and that a favourable decision will be taken
+      in the interest of the students.</p>
+
+    <div class="closing">
+      <p class="thanks">Thank you.</p>
+      <div class="sign-block">
+        <span class="valediction">Yours sincerely,</span>
+        <div class="sign-fields">
+          <div class="field"><span class="label">Name</span><span class="rule"></span></div>
+          <div class="field"><span class="label">Department</span><span class="rule"></span></div>
+          <div class="field"><span class="label">Hostel</span><span class="rule"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="send-panel">
+    <div class="send-copy">
+      <span class="send-label" id="sendLabel">Opening your email app&hellip;</span>
+      <span class="send-desc">If it didn&rsquo;t open automatically, use the button. Fill in your Name, Department and
+        Hostel before sending.</span>
+    </div>
+    <a class="send-button" id="mailtoLink"
+      href="mailto:rajshree.bbau2009@gmail.com?cc=vc%40bbau.ac.in%2Cbbau.proctor%40bbau.ac.in%2Cprof.chandrabbau%40gmail.com%2Csufi.bbau%40gmail.com%2Cpradeepbbau%40gmail.com%2Cbbau.dsw%40bbau.ac.in%2Cnarendrakumar_lko%40yahoo.co.in%2Csunil_gos%40yahoo.com%2Cgsbabu%40bbau.ac.in&subject=Representation%20Regarding%20Mess%20Caution%20Money%20%E2%80%93%20Ref%3A%20ACD45996%2FBBAU%2F26&body=Respected%20Sir%2FMadam%2C%0A%0AWe%2C%20the%20students%20residing%20in%20the%20University%20Hostels%2C%20respectfully%20wish%20to%20draw%20your%20kind%20attention%20to%20Letter%20No.%20ACD45996%2FBBAU%2F26%20dated%2003%2F08%2F2026%2C%20particularly%20Point%20No.%205%2C%20which%20states%3A%0A%0A%225.%20Mess%20caution%20money%20of%20Rs.%205%2C000%20shall%20be%20deposited%20by%20the%20hostel%20inmates%20at%20the%20time%20of%20allotment%20of%20hostel%20along%20with%20the%20hostel%20fee.%20Further%2C%20in%20case%20of%20recovery%20from%20caution%20money%2C%20the%20same%20has%20to%20be%20recouped%20immediately%20by%20the%20hostel%20inmates%2C%20to%20continue%20to%20avail%20the%20mess%20services.%22%0A%0AWe%20would%20like%20to%20submit%20that%20many%20of%20us%20come%20from%20middle-class%20and%20financially%20modest%20backgrounds%2C%20and%20the%20additional%20payment%20of%20Rs.%205%2C000%20places%20a%20considerable%20financial%20burden%20on%20us.%20As%20students%20of%20a%20public-funded%20university%2C%20we%20depend%20on%20affordable%20hostel%20and%20mess%20facilities%20to%20continue%20our%20education%20without%20undue%20financial%20hardship.%0A%0AWe%2C%20therefore%2C%20sincerely%20request%20the%20concerned%20authorities%20to%20kindly%20consider%20our%20concerns%20and%20withdraw%20the%20newly%20introduced%20requirement%20of%20Rs.%205%2C000%20as%20mess%20caution%20money.%0A%0AFurthermore%2C%20students%20who%20have%20already%20deposited%20the%20newly%20proposed%20amount%20under%20any%20circumstances%2C%20including%20admission%20cancellation%2C%20evacuation%2Fvacation%20of%20hostels%2C%20or%20late%20submission%20of%20fees%2C%20should%20be%20immediately%20refunded%20the%20amount%2C%20irrespective%20of%20whether%20they%20are%20newly%20admitted%20students%20or%20already%20enrolled%20students.%0A%0AWe%20hope%20that%20our%20genuine%20concerns%20will%20be%20considered%20sympathetically%20and%20that%20a%20favourable%20decision%20will%20be%20taken%20in%20the%20interest%20of%20the%20students.%0A%0AThank%20you.%0A%0AYours%20sincerely%2C%0AName%3A%0ADepartment%3A%0AHostel%3A">Open
+      in mail app</a>
+  </div>
+
+  <footer>
+    <span class="note">For queries regarding this representation, write to <a
+        href="mailto:codeturbulent@gmail.com">codeturbulent@gmail.com</a>.</span>
+    <span class="stamp">Draft &middot; unsigned</span>
+  </footer>
+
+  <script>
+    window.addEventListener("load", function () {
+      window.location.href = document.getElementById("mailtoLink").href;
+    });
+  </script>
+
+</div>
